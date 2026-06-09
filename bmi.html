@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMetrics Calculator | BMI & BMR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h2>BioMetrics Analyzer</h2>
+        <p class="subtitle">Calculate Body Mass Index (BMI) & Basal Metabolic Rate (BMR)</p>
+        
+        <form id="metricsForm">
+            <div class="input-group">
+                <label>Biological Sex</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="male" checked> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"> Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age (years)</label>
+                <input type="number" id="age" min="1" max="120" placeholder="e.g., 16" required>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" step="0.1" min="1" placeholder="e.g., 60" required>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" step="0.1" min="30" placeholder="e.g., 170" required>
+            </div>
+
+            <button type="submit" id="calculateBtn">Analyze Metrics</button>
+        </form>
+
+        <div id="resultsSection" class="results-hidden">
+            <hr>
+            <h3>Analysis Results</h3>
+            
+            <div class="result-card">
+                <h4>Body Mass Index (BMI)</h4>
+                <p class="result-value" id="bmiValue">--</p>
+                <p class="result-status" id="bmiStatus">--</p>
+            </div>
+
+            <div class="result-card">
+                <h4>Basal Metabolic Rate (BMR)</h4>
+                <p class="result-value" id="bmrValue">--</p>
+                <p class="result-note">Calories/day required at complete rest.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
